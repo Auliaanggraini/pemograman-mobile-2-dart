@@ -5,48 +5,55 @@ class App extends StatelessWidget {
   Widget build(BuildContext context) {
       return MaterialApp(
             title: 'Flutter penyimpanan data',
-                  home: Scaffold(
-                          appBar: AppBar(
-                                    title: Text('TrisnaAuliaAnggraini_6SIA5'),
-                                            ),
-                                                    body: Mahasiswa(),
-                                                          ),
-                                                              );
-                                                                }
-                                                                }
+            home: Scaffold(
+              appBar: AppBar(
+                title: Text('TrisnaAuliaAnggraini_6SIA5'),
+              ),
+              body: Mahasiswa(),
+        ),
+     );
+   }
+ }
+
 class DataMahasiswa{
+
   String nomor;
-    String nirm;
-      String namamahasiswa;
-        String kelas;
+  String nirm;
+  String namamahasiswa;
+  String kelas;
+
   DataPerpustakaan({ this.nomor, this.nirm, this.namamahasiswa, this.kelas});
+
 }
 
 // class Mahasiswa
 class Mahasiswa extends StatefulWidget {
   _MyappState createState() => _MyappState();
   }
+
 class _MyappState extends State<Mahasiswa> {
   //deklarasi variabel
-    final txtnomor = TextEditingController();
-      final txtnirm = TextEditingController();
-        final txtnamamahasiswa = TextEditingController();
-          final txtkelas = TextEditingController();
-  List<Widget> data = [];
-  onTambah() {
-      setState(() {
-            data.add(ListTile(
-                    leading: Text(txtnomor.text),
-                            title: Text(txtnirm.text),
-                                    subtitle: Text(txtnamamahasiswa.text),
-                                            trailing: Text(txtkelas.text),
-                                                  ));
-                                                        txtnomor.clear();
-                                                              txtnirm.clear();
-                                                                    txtnamamahasiswa.clear();
-                                                                          txtkelas.clear();
-                                                                              });
-                                                                                }
+  final txtnomor = TextEditingController();
+  final txtnirm = TextEditingController();
+  final txtnamamahasiswa = TextEditingController();
+  final txtkelas = TextEditingController();
+  
+   List<Widget> data = [];
+
+   onTambah() {
+     setState(() {
+       data.add(ListTile(
+         leading: Text(txtnomor.text),
+         title: Text(txtnirm.text),
+         subtitle: Text(txtnamamahasiswa.text),
+         trailing: Text(txtkelas.text),
+       ));
+       txtnomor.clear();
+       txtnirm.clear();
+       txtnamamahasiswa.clear();
+       txtkelas.clear();
+       });
+       }
   Widget build(BuildContext context) {
       return ListView(
             children: <Widget>[
